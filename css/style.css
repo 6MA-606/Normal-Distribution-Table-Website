@@ -6,6 +6,8 @@
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
     mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
     /* height: 20rem;
     width: 40rem; */
     height: 18rem;
