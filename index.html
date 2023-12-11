@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normal Distribution Table</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="h-[30vh] w-full flex flex-col items-center">
+        <div class="normdist-mask">
+            <div class="mask-bg"></div>
+            <div class="p-value-bg"></div>
+            <div class="w-full h-full absolute">
+                <div class="w-1/2 h-full border-black border-2 border-left"></div>
+            </div>
+        </div>
+        <div>0</div>
+    </div>
+
+    <div class="h-[5vh]">
+        <label class="label cursor-pointer w-[6.5rem]">
+            <span class="label-text">Negative</span>
+            <input type="checkbox" class="toggle toggle-sm" id="negCheckBox" />
+        </label>
+    </div>
+    <div class="w-full h-[65vh] overflow-x-auto">
+        <table class="table table-pin-rows table-pin-cols">
+          <thead>
+            <tr>
+              <th>Z</th>
+              <!-- Dynamically generate header cells for probabilities -->
+              <script>
+                for (let i = 0; i <= 9; i++) {
+                  document.write(`<th>${(i / 100).toFixed(2)}</th>`)
+                }
+              </script>
+              <th>Z</th>
+            </tr>
+          </thead>
+          <tbody id="distributionTableBody"></tbody>
+        </table>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.2.0/math.js"
+      type="text/javascript"
+    ></script>
+    <script src="./scripts/main.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
