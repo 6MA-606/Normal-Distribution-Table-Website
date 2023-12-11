@@ -11,7 +11,7 @@ for (let z = 0; z <= 4.1; z += 0.1) {
   // Dynamically generate cells for probabilities
   for (let i = 0; i <= 0.09; i += 0.01) {
     const probability = standardNormalCDF(z + i).toFixed(4)
-    rowPositive += `<td id="p-${probability}" class="p-cell">${probability}</td>`
+    rowPositive += `<td id="p-${probability}" class="p-cell" data-z-value="${parseFloat(z + i).toFixed(2)}">${probability}</td>`
   }
 
   rowPositive += `<th>${z.toFixed(2)}</th></tr>`
@@ -23,7 +23,7 @@ for (let z = -4.0; z <= 0.1; z += 0.1) {
   // Dynamically generate cells for probabilities
   for (let i = 0; i >= -0.09; i -= 0.01) {
     const probability = standardNormalCDF(z + i).toFixed(4)
-    rowNegative += `<td id="p-${probability}" class="p-cell">${probability}</td>`
+    rowNegative += `<td id="p-${probability}" class="p-cell" data-z-value="${parseFloat(z + i).toFixed(2)}">${probability}</td>`
   }
 
   rowNegative += `<th>${z.toFixed(2)}</th></tr>`

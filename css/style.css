@@ -10,8 +10,8 @@
     mask-position: center;
     /* height: 20rem;
     width: 40rem; */
-    height: 18rem;
-    width: 24rem;
+    height: 13.5rem;
+    width: 18rem;
     
     /* display: flex;
     justify-content: center;
@@ -40,6 +40,15 @@
     display: flex;
     flex-direction: column;
     width: 24rem;
+}
+
+.p-cell {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.p-cell.found {
+    background: #ffa7;
 }
 
 .p-cell.selected {

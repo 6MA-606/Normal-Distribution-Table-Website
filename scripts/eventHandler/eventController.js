@@ -9,7 +9,27 @@ export function clickCellHandler(e) {
     e.target.classList.add('selected')
 }
 
-export function negCheckBoxClick(e) {
+export function negCheckBoxHandler(e) {
     if (e.target.checked) generateNormalDistributionTable(true)
     else generateNormalDistributionTable(false)
+}
+
+export function zValueInputHandler(e) {
+    const z = e.target.value.length > 4 ? parseFloat(e.target.value).toFixed(2) : e.target.value
+    console.log(z)
+
+    const pCells = document.querySelectorAll('.p-cell')
+
+    pCells.forEach((pCell) => {
+        // console.log(pCell.dataset.z)
+        if (pCell.dataset.zValue.startsWith(z) && z !== '') {
+            pCell.classList.add('found')
+            // console.log(pCell)
+        } else {
+            pCell.classList.remove('found')
+        }
+    })
+
+    const foundCells = document.querySelector('.found')
+    foundCells?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 }

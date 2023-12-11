@@ -1,4 +1,4 @@
-import { negCheckBoxClick } from "./eventHandler/eventController.js"
+import { negCheckBoxHandler, zValueInputHandler } from "./eventHandler/eventController.js"
 import generateNormalDistributionTable from "./util/normDistTable.js"
 
 // const pValueInput = document.getElementById('p-value')
@@ -11,5 +11,8 @@ import generateNormalDistributionTable from "./util/normDistTable.js"
 // })
 
 const negCheckBox = document.getElementById('negCheckBox')
-negCheckBox.addEventListener('input', negCheckBoxClick)
+const zValueInput = document.getElementById('zValueInput')
+
+negCheckBox.addEventListener('input', negCheckBoxHandler)
+zValueInput.addEventListener('input', zValueInputHandler)
 generateNormalDistributionTable()
